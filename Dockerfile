@@ -6,6 +6,15 @@ COPY requirements.txt /app/backend
 RUN pip install -r requirements.txt
 
 COPY . /app/backend
+# Set working directory for frontend
+WORKDIR /app/frontend
+
+# Install frontend dependencies
+COPY frontend/package.json frontend/package-lock.json /app/frontend/
+RUN npm install
+
+# Build ReactJS frontend
+RUN npm run build
 
 EXPOSE 8000
 
