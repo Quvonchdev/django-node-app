@@ -20,9 +20,5 @@ RUN npm install
 RUN npm run build
 
 EXPOSE 8000
-# Volume
-VOLUME /app/backend/media
-VOLUME /app/backend/static
-VOLUME django-db
 
 CMD python /app/backend/manage.py runserver 0.0.0.0:8000
