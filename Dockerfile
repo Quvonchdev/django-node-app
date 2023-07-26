@@ -10,10 +10,10 @@ RUN pip install -r requirements.txt
 
 COPY . /app/backend
 # Set working directory for frontend
-WORKDIR /app/frontend
+WORKDIR /app/mynotes
 
 # Install frontend dependencies
-COPY mynotes/package.json mynotes/package-lock.json /app/frontend/
+COPY mynotes/package.json mynotes/package-lock.json /app/mynotes/
 RUN npm install
 
 # Build ReactJS frontend
