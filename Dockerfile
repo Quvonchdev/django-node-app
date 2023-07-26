@@ -10,7 +10,7 @@ COPY . /app/backend
 WORKDIR /app/frontend
 
 # Install frontend dependencies
-COPY frontend/package.json frontend/package-lock.json /app/frontend/
+COPY mynotes/package.json mynotes/package-lock.json /app/frontend/
 RUN npm install
 
 # Build ReactJS frontend
