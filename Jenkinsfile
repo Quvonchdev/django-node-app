@@ -13,9 +13,10 @@ pipeline {
                 echo "Build the image"
                 sh "docker build -t my-node-app ."
             }
+
             
         }
-        stage("Push to Docker Hub"){
+        stage("Push to Docker ll Hub"){
             steps {
                 echo "Pushing the image to docker hub"
                 withCredentials([usernamePassword(credentialsId:"dockerhub",passwordVariable:"dockerhubPass",usernameVariable:"dockerhubUser")]){
